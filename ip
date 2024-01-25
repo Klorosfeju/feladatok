@@ -1,0 +1,27 @@
+ip cím számolás
+példa:
+Határozza meg az Iroda1 router két LAN-jának IP-tartományát:
+Kiindulási hálózat: 192.168.50.0/24
+- SW1-hez 75 állomás fog csatlakozni
+
+(helyettesítő: 192.168.111.0/24)
+
+- SW2-höz 25 állomás fog csatlakozni
+
+(helyettesítő: 192.168.222.0/24)
+
+- a routeré legyen mindkét hálózat első használható címe
+- PC0 és PC1 kapja a 2. és 3. használható címet
+- PC2 és PC3 pedig az utolsó és utolsó előtti használható címet számold ki a maszkot, első és az utolsó  címet, írd le hogyan kell
+128.64.32.16.8.4.2.1
+sw1:
+192.168.50.0
+maszk:
+255.255.255.127 mivel 75
+192.168.50.127, utolsó elötti
+
+sw2.
+192.168.50.128
+maszk 255.255.255.224 mivel 25 fér el, ebből le kell vonni 2 hogy fixen beleférjek, és azért 224 mert mert a 128 1 a 64 1 és a 32 1
+192.168.50.159 mert a 128+31
+
